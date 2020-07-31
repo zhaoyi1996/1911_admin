@@ -31,7 +31,7 @@ class CateController extends AdminController
         $grid->column('keywords', __('Keywords'));
         $grid->column('cat_desc', __('Cat desc'));
         $grid->column('parent_id', __('Parent id'));
-        $grid->column('sort_order', __('Sort order'));
+        $grid->switch('sort_order', __('Sort order'))->default(50);
         $grid->column('template_file', __('Template file'));
         $grid->column('measure_unit', __('Measure unit'));
         $grid->column('show_in_nav', __('Show in nav'));
@@ -84,7 +84,7 @@ class CateController extends AdminController
         $form->text('cat_name', __('Cat name'));
         $form->text('keywords', __('Keywords'));
         $form->text('cat_desc', __('Cat desc'));
-        $form->number('parent_id', __('Parent id'));
+        $form->select('parent_id', __('Parent id'))->options(CateModel::selectOption());
         $form->switch('sort_order', __('Sort order'))->default(50);
         $form->text('template_file', __('Template file'));
         $form->text('measure_unit', __('Measure unit'));

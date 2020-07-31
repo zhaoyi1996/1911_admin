@@ -61,7 +61,7 @@ class GoodsController extends AdminController
         $show->field('goods_number', __('Goods number'));
         $show->field('shop_price', __('Shop price'));
         $show->field('keywords', __('Keywords'));
-        $show->field('goods_desc', __('Goods desc'));
+        $show->ckeditor('goods_desc', __('Goods desc'));
         $show->field('goods_img', __('Goods img'));
         $show->field('add_time', __('Add time'));
         $show->field('is_delete', __('Is delete'));
@@ -87,7 +87,7 @@ class GoodsController extends AdminController
         $form->number('goods_number', __('商品数量'));
         $form->decimal('shop_price', __('商品价格'))->default(0.00);
         $form->text('keywords', __('关键字'));
-        $form->textarea('goods_desc', __('商品介绍'));
+        $form->ckeditor('goods_desc', __('商品介绍'));
         $form->file('goods_img', __('商品图片'));
         $form->number('add_time', __('添加时间'));
         $form->switch('is_delete', __('是否删除'));
